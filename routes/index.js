@@ -2,6 +2,10 @@ var express = require('express');
 var router = express.Router();
 var UserModel = require('../models/userModel')
 
+router.get('/',(req,res,next)=>{
+  res.send('Hello world')
+})
+
 /* Add data to the data base. */
 router.post('/add_data', function(req, res, next) {
   UserModel.create(req.body).then((doc)=>{
